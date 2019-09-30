@@ -86,8 +86,7 @@ for aln_name in aln_names_stripped:
         gb_length = len(i.seq)    
         
     score = round(1 - ((aln_length - gb_length) / aln_length), 3)
-    result.append([aln_name.split("/")[-1], score])
-    print(aln_name.split("/")[-1] + " " + str(score))
+    result.append([aln_name.split("/")[-1][:-4], score])
     
 output = open(fastas_dir + "final_scores.tsv", "w")
 
