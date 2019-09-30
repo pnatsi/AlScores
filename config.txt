@@ -1,0 +1,8 @@
+#directory with fastas
+fastas_dir=/Users/wigo/Downloads/generax_data/ensembl_96_ncrna_primates/alignments/
+
+#mafft path
+mafft_path=/usr/local/bin/mafft
+
+#Gblocks path
+Gblocks_path=/Users/wigo/bin/Gblocks
