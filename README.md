@@ -32,10 +32,12 @@ python AlScore.py -c config.txt -t dna
 ```
 
 <br>
+
 The output file will be called `final_scores.tsv` and will contain two columns: filename and score. <br>
 The score can range from 0 to 1, with higher score meaning better aligment quality.
  
 <br>
+
 Who<br> 
  Paschalis Natsidis, PhD candidate (p.natsidis@ucl.ac.uk); <br>
 <br>
