@@ -28,7 +28,7 @@ AlScore needs a config file to run. This file will contain the paths to required
 Please change the provided `config.txt` file accordingly before running your own analysis.
 
 ```
-python AlScore.py -c config.txt -t dna
+python AlScores.py -c config.txt -t dna
 ```
 
 <br>
