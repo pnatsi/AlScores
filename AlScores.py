@@ -11,7 +11,7 @@ footer = "Who \n Paschalis Natsidis (p.natsidis@ucl.ac.uk); \n \nWhere \n Telfor
 parser = argparse.ArgumentParser(description = usage, prog = toolname, epilog = footer, formatter_class=argparse.RawDescriptionHelpFormatter,)
 parser.add_argument('-c', metavar = 'filename', dest = 'config', required = True,
                     help = 'full path to config file')
-parser.add_argument('-t', metavar = 'str', dest = 'type', required = True,
+parser.add_argument('-t', metavar = 'str', dest = 'type', required = True, choices=['protein', 'dna']
                     help = 'type of molecules [protein, dna]')
 
 #parser.print_help()
