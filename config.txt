@@ -1,5 +1,5 @@
 #directory with fastas
-fastas_dir=/Users/wigo/Downloads/example_data/
+fastas_dir=/Users/wigo/AlScores/example_data/
 
 #mafft path
 mafft_path=/usr/local/bin/mafft

@@ -65,10 +65,10 @@ aln_names_stripped = [x.strip() for x in aln_names_lines]
 
 if type_of_seq == "protein":
     for aln_name in aln_names_stripped:
-        os.system(gblocks_path + " " + aln_name + " -t=p")
+        os.system(gblocks_path + " " + aln_name + " -t=p -b5=h")
 elif type_of_seq == "dna":
     for aln_name in aln_names_stripped:
-        os.system(gblocks_path + " " + aln_name + " -t=d")
+        os.system(gblocks_path + " " + aln_name + " -t=d -b5=h")
 
 ################################################################################################################
 # CALCULATE SCORE FOR EACH ALIGNMENT AND WRITE OUTPUT FILE
