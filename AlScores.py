@@ -45,7 +45,7 @@ for line in proper_lines:
 ################################################################################################################
 #CREATE LIST WITH FASTAS
 os.system("ls " + fastas_dir + "* > " + fastas_dir + "all_fasta_files.txt")
-'''
+
 #RUN MAFFT FOR EACH FASTA
 fastas_names = open(fastas_dir + "all_fasta_files.txt", "r")
 fastas_names_lines = fastas_names.readlines()
@@ -53,7 +53,7 @@ fastas_names_stripped = [x.strip() for x in fastas_names_lines]
 
 for fastas_name in fastas_names_stripped:
     os.system(mafft_path + " --auto " + fastas_name + " > " + fastas_name + ".aln")
-'''
+
 ################################################################################################################
 #CREATE LIST WITH ALIGNMENT FILENAMES
 os.system("ls " + fastas_dir + "*aln > " + fastas_dir + "all_aln_files.txt")
