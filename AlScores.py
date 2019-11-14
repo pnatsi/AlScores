@@ -44,8 +44,8 @@ for line in proper_lines:
 
 ################################################################################################################
 #CREATE LIST WITH FASTAS
-os.system("ls " + fastas_dir + "*fasta > " + fastas_dir + "all_fasta_files.txt")
-
+os.system("ls " + fastas_dir + "* > " + fastas_dir + "all_fasta_files.txt")
+'''
 #RUN MAFFT FOR EACH FASTA
 fastas_names = open(fastas_dir + "all_fasta_files.txt", "r")
 fastas_names_lines = fastas_names.readlines()
@@ -53,7 +53,7 @@ fastas_names_stripped = [x.strip() for x in fastas_names_lines]
 
 for fastas_name in fastas_names_stripped:
     os.system(mafft_path + " --auto " + fastas_name + " > " + fastas_name + ".aln")
-
+'''
 ################################################################################################################
 #CREATE LIST WITH ALIGNMENT FILENAMES
 os.system("ls " + fastas_dir + "*aln > " + fastas_dir + "all_aln_files.txt")
@@ -63,12 +63,14 @@ aln_names = open(fastas_dir + "all_aln_files.txt", "r")
 aln_names_lines = aln_names.readlines()
 aln_names_stripped = [x.strip() for x in aln_names_lines]
 
-if type_of_seq == "protein":
-    for aln_name in aln_names_stripped:
-        os.system(gblocks_path + " " + aln_name + " -t=p -b5=h")
-elif type_of_seq == "dna":
-    for aln_name in aln_names_stripped:
-        os.system(gblocks_path + " " + aln_name + " -t=d -b5=h")
+for aln_name in aln_names_stripped:
+    f = SeqIO.parse(aln_name, "fasta")
+    number_of_seqs = 0
+    for record in f:
+        number_of_seqs += 1
+    half = int(number_of_seqs/2)
+    os.system(gblocks_path + " " + aln_name + " -t=" + type_of_seq[0] + " -b5=h -b4=5 -b3=20 -b1=" + str(half+1) + " -b2=" + str(half+1))
+
 
 ################################################################################################################
 # CALCULATE SCORE FOR EACH ALIGNMENT AND WRITE OUTPUT FILE
